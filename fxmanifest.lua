@@ -21,7 +21,3 @@ shared_scripts {
     '@ox_lib/init.lua',
     '@oxmysql/lib/MySQL.lua'
 }
-
-escrow_ignore {
-    'config.lua',
-}
