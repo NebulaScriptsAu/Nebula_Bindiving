@@ -16,7 +16,7 @@ end
 local function TryInjury()
     if not Config.Injurysystem.enabled then return end
 
-    lib.callback("lips_bindiving:checkForGloves", false, function(hasProtection)
+    lib.callback("nebula_bindiving:checkForGloves", false, function(hasProtection)
         if hasProtection then return end
 
         local roll = math.random(1, 100)
@@ -40,7 +40,7 @@ CreateThread(function()
         if nearby and not searching then
             lib.showTextUI(Config.Interaction.text)
             if IsControlJustReleased(0, 38) then -- E key
-                lib.callback("lips_bindiving:canSearch", false, function(canSearch)
+                lib.callback("nebula_bindiving:canSearch", false, function(canSearch)
                     if not canSearch then
                         lib.notify({
                             title = "Nothing Here",
@@ -75,7 +75,7 @@ CreateThread(function()
                     ClearPedTasks(PlayerPedId())
 
                     if success then
-                        TriggerServerEvent("lips_bindiving:giveItem", spotIndex)
+                        TriggerServerEvent("nebula_bindiving:giveItem", spotIndex)
                         TryInjury()
                     end
 
