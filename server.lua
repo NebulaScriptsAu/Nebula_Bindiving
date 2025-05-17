@@ -92,7 +92,7 @@ local function SendWebhookLog(player, rewards, wasTriggered, locId)
 end
 
 -- Main event
-RegisterNetEvent("lips_bindiving:giveItem", function(locationId)
+RegisterNetEvent("nebula_bindiving:giveItem", function(locationId)
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
 
@@ -148,13 +148,13 @@ RegisterNetEvent("lips_bindiving:giveItem", function(locationId)
 end)
 
 -- Injury item check using ox_inventory
-lib.callback.register('lips_bindiving:checkForGloves', function(source)
+lib.callback.register('nebula_bindiving:checkForGloves', function(source)
     local item = exports.ox_inventory:Search(source, 'count', Config.Injurysystem.protectiveItem)
     return item > 0
 end)
 
 -- Spot cooldown
-lib.callback.register('lips_bindiving:canSearch', function(source, locationId)
+lib.callback.register('nebula_bindiving:canSearch', function(source, locationId)
     local now = os.time()
     if not locationTimers[locationId] or now >= locationTimers[locationId] then
         return true
