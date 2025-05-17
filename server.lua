@@ -50,7 +50,7 @@ local function SendWebhookLog(player, rewards, wasTriggered, locId)
     end
 
     local description = wasTriggered and (
-        ("**%s** was kicked for abusing the bindiving trigger (Location ID: %s)!"):format(player.PlayerData.name, tostring(locId))
+        ("**%s** may be abusing the bindiving trigger (Location ID: %s)!"):format(player.PlayerData.name, tostring(locId))
     ) or (
         ("**%s** has completed a dive search at location ID %s!"):format(player.PlayerData.name, tostring(locId))
     )
